@@ -48,29 +48,3 @@
   justify-content: space-between;
   column-gap: 10px;
 }
-
-.btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 95px;
-  height: 30px;
-  border: none;
-  border-radius: 10px;
-  background: none;
-  cursor: pointer;
-
-  font-family: Montserrat;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 100%;
-  color: #ffffff;
-}
-
-.green {
-  background-color: #2ee5ac;
-}
-
-.grey {
-  background-color: #7d7d7d;
-}

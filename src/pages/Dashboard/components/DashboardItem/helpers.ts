@@ -59,3 +59,7 @@ export const getTypeTitle = (type: Type) => {
       return null;
   }
 };
+
+export const clearUrlFromPrefix = (url: string) => {
+  return url.replace(/^https?:\/\/(www\.)?|^www\./, '')
+}

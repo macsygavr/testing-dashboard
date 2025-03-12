@@ -1,15 +1,27 @@
 import React, { FC } from "react";
 import css from "./index.module.css";
-import { Test } from "../../../../api/api";
 import { getStatusColor, getStatusTitle, getTypeTitle } from "./helpers";
-import cn from "classnames";
+import Button from "../../../../components/Button/Button";
+import { PreparedTest } from "../../helpers";
+import { Status } from "../../../../api/api";
+import { useNavigate } from "react-router";
 
 type Props = {
-  test: Test;
+  test: PreparedTest;
   color: string;
 };
 
 const DashboardItem: FC<Props> = ({ test, color }) => {
+  const navigate = useNavigate();
+
+  const handleGoToFinalizeClick = () => {
+    navigate(`/finalize/${test.id}`);
+  };
+
+  const handleGoToResultsClick = () => {
+    navigate(`/results/${test.id}`);
+  };
+
   return (
     <div className={css.container} style={{ borderLeft: `4px solid ${color}` }}>
       <div className={css.gridContainer}>
@@ -22,8 +34,16 @@ const DashboardItem: FC<Props> = ({ test, color }) => {
           {getStatusTitle(test.status)}
         </span>
         <div className={css.lastContainer}>
-          <span>{test.siteId}</span>
-          <button className={cn(css.btn, css.grey)}>Result</button>
+          <span>{test.site}</span>
+          {test.status === Status.DRAFT ? (
+            <Button variant="grey" onClick={handleGoToFinalizeClick}>
+              Finalize
+            </Button>
+          ) : (
+            <Button variant="green" onClick={handleGoToResultsClick}>
+              Results
+            </Button>
+          )}
         </div>
       </div>
     </div>

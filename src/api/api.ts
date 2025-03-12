@@ -1,7 +1,11 @@
+import axios, { AxiosResponse } from "axios";
+
+const baseApiPath = "http://localhost:3100";
+
 export enum Type {
   CLASSIC = "CLASSIC",
   SERVER_SIDE = "SERVER_SIDE",
-  MVT = "MVT"
+  MVT = "MVT",
 }
 
 export enum Status {
@@ -23,3 +27,15 @@ export interface Test {
   status: Status;
   siteId: number;
 }
+
+export const getAllTests = (): Promise<Test[]> => {
+  return axios.get(`${baseApiPath}/tests`).then(data => data.data);
+};
+
+export const getAllSites = (): Promise<Site[]> => {
+  return axios.get(`${baseApiPath}/sites`).then(data => data.data);
+};
+
+export const getTestsById = (id: number): Promise<Test> => {
+  return axios.get(`${baseApiPath}/tests/${id}`).then(data => data.data);
+};

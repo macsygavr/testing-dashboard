@@ -1,0 +1,14 @@
+.backBtn {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  cursor: pointer;
+  width: min-content;
+}
+
+.text {
+  font-family: Montserrat;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 100%;
+}

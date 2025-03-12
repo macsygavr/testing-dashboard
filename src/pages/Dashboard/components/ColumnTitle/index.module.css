@@ -1,0 +1,25 @@
+.columnContainer {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+  cursor: pointer;
+  width: min-content;
+}
+
+.columnTitle {
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 100%;
+  color: #999999;
+  width: min-content;
+}
+
+.arrow {
+  display: flex;
+  align-items: center;
+}
+
+.down {
+  transform: rotate(180deg);
+}
