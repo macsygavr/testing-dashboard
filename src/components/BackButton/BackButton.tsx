@@ -9,10 +9,10 @@ const BackButton = () => {
   const handleBackClick = () => navigate(-1);
 
   return (
-    <div onClick={handleBackClick} className={css.backBtn}>
+    <button onClick={handleBackClick} className={css.backBtn}>
       <BackArrow />
       <span className={css.text}>Back</span>
-    </div>
+    </button>
   );
 };
 

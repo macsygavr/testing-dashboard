@@ -12,26 +12,26 @@ type Props = {
 
 const ColumnTitle: FC<Props> = ({ columnKey, sortConfig, onClick }) => {
   return (
-    <div
-      className={css.columnContainer}
-      onClick={() => {
-        if (columnKey) {
-          onClick(columnKey);
-        }
-      }}
-    >
-      <span className={css.columnTitle}>{columnKey?.toUpperCase()}</span>
-      {sortConfig?.key === columnKey && (
+    <th className={css.columnContainer}>
+      <div
+        className={css.columnTitleBlock}
+      >
+        <span className={css.columnTitle} onClick={() => {
+          if (columnKey) {
+            onClick(columnKey);
+          }
+        }}>{columnKey?.toUpperCase()}</span>
         <div
           className={cn(
             css.arrow,
+            sortConfig?.key !== columnKey && css.hidden,
             sortConfig?.direction === Direction.ASC && css.down
           )}
         >
           <SortIcon />
         </div>
-      )}
-    </div>
+      </div>
+    </th>
   );
 };
 

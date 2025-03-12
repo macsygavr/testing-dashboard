@@ -9,8 +9,6 @@ const Results = () => {
   const { testId } = useParams();
   const [testData, setTestData] = useState<Test>();
 
-  console.log(testId);
-
   useEffect(() => {
     if (testId) {
       getTestsById(Number(testId)).then(setTestData);

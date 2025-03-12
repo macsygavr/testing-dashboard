@@ -307,3 +307,11 @@ body {
   src: url("../public/fonts/Roboto/Roboto-BlackItalic.ttf") format("truetype");
   font-display: block;
 }
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../public/fonts/Nunito/Nunito-Bold.ttf") format("truetype");
+  font-display: block;
+}

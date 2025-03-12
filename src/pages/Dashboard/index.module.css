@@ -21,16 +21,17 @@
   width: 100%;
   position: relative;
   display: flex;
-  top: 16px;
+  top: 14px;
   left: 10px;
   padding-right: 24px;
 }
 
-.searchButton {
+.searchIcon {
   height: 0px;
   border: none;
   background: none;
   cursor: default;
+  padding: 0px 4px;
 }
 
 .input {
@@ -71,17 +72,51 @@
 .tableContainer {
   display: flex;
   flex-direction: column;
-  row-gap: 5px;
-}
-
-.columnsTitlesContainer {
-  display: grid;
-  grid-template-columns: 6fr 2fr 2fr 4fr;
-  column-gap: 20px;
-  padding: 0px 12px 5px 16px;
 }
 
 .siteColumn {
   min-width: 110px;
   padding-right: 12px;
+}
+
+.table {
+  text-align: left;
+  border-collapse: separate;
+  border-spacing: 0 5px;
+}
+
+.table tr {
+  border-radius: 3px;
+}
+
+.table th {
+  padding-left: 10px;
+}
+
+.table td {
+  padding-left: 10px;
+}
+
+.table th:first-child {
+  padding-left: 19px;
+}
+
+.table td:first-child {
+  padding-left: 15px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  width: 50%;
+}
+
+.table td:nth-child(4) {
+  width: 0px;
+}
+
+.table td:last-child {
+  justify-items: end;
+  padding-left: 60px;
+  padding-right: 12px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  width: 0px;
 }

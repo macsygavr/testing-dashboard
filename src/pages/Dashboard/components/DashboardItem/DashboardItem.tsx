@@ -23,30 +23,27 @@ const DashboardItem: FC<Props> = ({ test, color }) => {
   };
 
   return (
-    <div className={css.container} style={{ borderLeft: `4px solid ${color}` }}>
-      <div className={css.gridContainer}>
-        <span className={css.name}>{test.name}</span>
-        <span>{getTypeTitle(test.type)}</span>
-        <span
-          className={css.status}
-          style={{ color: `${getStatusColor(test.status)}` }}
-        >
-          {getStatusTitle(test.status)}
-        </span>
-        <div className={css.lastContainer}>
-          <span>{test.site}</span>
-          {test.status === Status.DRAFT ? (
-            <Button variant="grey" onClick={handleGoToFinalizeClick}>
-              Finalize
-            </Button>
-          ) : (
-            <Button variant="green" onClick={handleGoToResultsClick}>
-              Results
-            </Button>
-          )}
-        </div>
-      </div>
-    </div>
+    <tr className={css.container}>
+      <td style={{ borderLeft: `4px solid ${color}` }}>{test.name}</td>
+      <td>{getTypeTitle(test.type)}</td>
+      <td style={{ color: `${getStatusColor(test.status)}` }}>
+        {getStatusTitle(test.status)}
+      </td>
+      <td>
+        <span>{test.site}</span>
+      </td>
+      <td>
+        {test.status === Status.DRAFT ? (
+          <Button variant="grey" onClick={handleGoToFinalizeClick}>
+            Finalize
+          </Button>
+        ) : (
+          <Button variant="green" onClick={handleGoToResultsClick}>
+            Results
+          </Button>
+        )}
+      </td>
+    </tr>
   );
 };
 

@@ -4,10 +4,12 @@
   align-items: center;
   cursor: pointer;
   width: min-content;
+  border: none;
+  background: none;
 }
 
 .text {
-  font-family: Montserrat;
+  font-family: Nunito;
   font-weight: 700;
   font-size: 18px;
   line-height: 100%;

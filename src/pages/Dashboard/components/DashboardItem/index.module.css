@@ -1,10 +1,7 @@
 .container {
-  display: flex;
-  align-items: center;
   height: 70px;
   width: 100%;
   background: #ffffff;
-  border-radius: 3px;
   cursor: pointer;
 }
 
@@ -16,15 +13,11 @@
   white-space: nowrap;
 }
 
-.gridContainer {
-  display: grid;
-  grid-template-columns: 6fr 2fr 2fr 4fr;
-  padding: 20px 12px;
-  width: 100%;
-  column-gap: 20px;
+.container td {
+  align-content: center;
 }
 
-.container span {
+.container td {
   font-family: Roboto;
   font-weight: 400;
   font-size: 12px;
@@ -33,18 +26,19 @@
   align-content: center;
 }
 
-.name {
+.container td:first-child {
   font-weight: 500;
   font-size: 13px;
   color: #474747;
 }
 
-.status {
+.container td:nth-child(3) {
   font-weight: 500;
 }
 
 .lastContainer {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   column-gap: 10px;
 }

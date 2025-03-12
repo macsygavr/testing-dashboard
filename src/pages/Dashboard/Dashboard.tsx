@@ -102,9 +102,9 @@ const Dashboard = () => {
     <div className={css.container}>
       <Header title={"Dashboard"} />
       <div className={css.relativeContainer}>
-        <button className={css.searchButton}>
+        <div className={css.searchIcon}>
           <SearchIcon />
-        </button>
+        </div>
         <span className={css.counter}>
           {`${(preparedList ?? []).length} tests`}
         </span>
@@ -127,7 +127,30 @@ const Dashboard = () => {
           </div>
         ) : sitesList ? (
           <>
-            <div className={css.columnsTitlesContainer}>
+            <table className={css.table}>
+              <thead>
+                <tr>
+                  {columns.map((item) => (
+                    <ColumnTitle
+                      key={item}
+                      columnKey={item}
+                      sortConfig={sortConfig}
+                      onClick={handleSort}
+                    />
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {preparedList?.map((item, index) => (
+                  <DashboardItem
+                    key={item.id}
+                    color={colors[index]}
+                    test={item}
+                  />
+                ))}
+              </tbody>
+            </table>
+            {/* <div className={css.columnsTitlesContainer}>
               {columns.map((item) => (
                 <ColumnTitle
                   key={item}
@@ -139,7 +162,7 @@ const Dashboard = () => {
             </div>
             {preparedList?.map((item, index) => (
               <DashboardItem key={item.id} color={colors[index]} test={item} />
-            ))}
+            ))} */}
           </>
         ) : null}
       </div>
@@ -148,3 +171,10 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
+
+const data = [
+  { id: 1, name: "Иван", age: 30, city: "Москва" },
+  { id: 2, name: "Алексей", age: 25, city: "Санкт-Петербург" },
+  { id: 3, name: "Мария", age: 28, city: "Новосибирск" },
+  { id: 4, name: "Екатерина", age: 35, city: "Казань" },
+];
